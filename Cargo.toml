@@ -1,0 +1,43 @@
+[package]
+name = "ctrader-rs"
+version = "0.0.1"
+description = "An robust spotware async client"
+license = "Apache-2.0"
+repository = "https://github.com/forex24/spotware_async_client"
+authors = ["Xiaojun Gao"]
+edition = "2021"
+keywords = ["spotware", "async", "client", "open api"]
+categories = ["network-programming"]
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
+
+[dependencies]
+tokio = { version = "1", features = ["full", "macros", "tracing"] }
+tokio-util = { version = "0.7.9", features = ["codec"] }
+thiserror = "1"
+prost = "0.12"
+webpki-roots = "0.25"
+rustls = { version = "0.21", features = ["dangerous_configuration"] }
+governor = "0.6"
+nonzero_ext = "*"
+url = "2.4"
+tokio-rustls = "0.24"
+futures = "0.3"
+chrono = { version = "0.4", features = ["serde"] }
+structopt = "0.3"
+uuid = {version = "1.4", features = ["v4", "fast-rng"]}
+tracing = "0.1"
+tracing-appender="0.2"
+tracing-subscriber = {version = "0.3", features = ["env-filter"]}
+tracing-error = "0.2"
+serde = {version = "1.0", features = ["derive"]}
+serde_json = "1.0"
+
+[dev-dependencies]
+dotenv = "0.15"
+
+[build-dependencies]
+prost-build = "0.12"
+chrono = "0.4.26"
